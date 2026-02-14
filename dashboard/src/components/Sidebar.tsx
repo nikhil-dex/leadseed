@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
@@ -35,11 +35,13 @@ interface SidebarProps {
 export function Sidebar({ isMobileMenuOpen = false, onClose }: SidebarProps) {
   const pathname = usePathname();
   const router = useRouter();
+  const prevPathnameRef = useRef(pathname);
 
   useEffect(() => {
-    if (onClose) {
+    if (prevPathnameRef.current !== pathname && onClose) {
       onClose();
     }
+    prevPathnameRef.current = pathname;
   }, [pathname, onClose]);
 
   useEffect(() => {
