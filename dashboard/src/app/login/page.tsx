@@ -10,13 +10,13 @@ function LoginContent() {
   const error = searchParams.get('error');
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-slate-50 to-slate-100 p-4">
-      <div className="w-full max-w-sm rounded-2xl border border-border bg-white p-8 shadow-sm">
-        <div className="flex justify-center mb-2">
-          <Image src="/seed.png" alt="Leadseed" width={48} height={48} className="rounded" />
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-primary/5 via-background to-primary/10 p-4">
+      <div className="w-full max-w-md rounded-3xl border border-border bg-card p-8 sm:p-10 shadow-xl">
+        <div className="flex justify-center mb-4">
+          <Image src="/seed.png" alt="Leadseed" width={56} height={56} className="rounded-xl" />
         </div>
-        <h1 className="text-2xl font-semibold text-center text-foreground">Leadseed</h1>
-        <p className="text-center text-muted-foreground mt-2 text-sm">
+        <h1 className="text-3xl font-bold text-center text-foreground tracking-tight">Leadseed</h1>
+        <p className="text-center text-muted-foreground mt-3 text-base">
           Sign in to manage leads and tasks
         </p>
         {error && (
@@ -38,12 +38,12 @@ function LoginContent() {
         )}
         <a
           href={getAuthUrl()}
-          className="mt-6 flex items-center justify-center gap-2 w-full rounded-lg bg-[#0A66C2] text-white py-3 px-4 font-medium hover:bg-[#004182] transition-colors"
+          className="mt-8 flex items-center justify-center gap-2 w-full rounded-xl bg-[#0A66C2] text-white py-3.5 px-4 font-semibold hover:bg-[#004182] transition-all duration-200 shadow-md hover:shadow-lg"
         >
           <LinkedInIcon />
           Sign in with LinkedIn
         </a>
-        <p className="mt-6 text-center text-xs text-muted-foreground">
+        <p className="mt-8 text-center text-sm text-muted-foreground">
           By signing in you agree to use Leadseed in compliance with LinkedIn&apos;s terms.
         </p>
       </div>
@@ -62,8 +62,8 @@ function LinkedInIcon() {
 export default function LoginPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-slate-50 to-slate-100">
-        <p className="text-muted-foreground">Loading...</p>
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 via-background to-primary/10">
+        <p className="text-muted-foreground text-lg">Loading...</p>
       </div>
     }>
       <LoginContent />

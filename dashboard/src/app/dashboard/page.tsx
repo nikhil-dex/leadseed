@@ -88,12 +88,13 @@ export default function DashboardPage() {
 
   return (
     <div className="space-y-6 sm:space-y-8">
-      {/* Home Section */}
-      <SectionHeader title="Home" subtitle="Last 90 days" />
-      <div>
-        <h1 className="text-xl sm:text-2xl font-semibold text-foreground">
-          Hello {stats.profileName} 👋
+      <div className="flex flex-col gap-2">
+        <h1 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight">
+          Hello, {stats.profileName} 👋
         </h1>
+        <p className="text-sm sm:text-base text-muted-foreground">
+          Here's an overview of your LinkedIn activity and campaigns
+        </p>
       </div>
 
       {/* Row 1 — LinkedIn Metrics Cards */}

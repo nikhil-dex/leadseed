@@ -19,8 +19,8 @@ export default function ProfilePage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-xl sm:text-2xl font-semibold text-foreground">Profile</h1>
-        <p className="text-sm sm:text-base text-muted-foreground mt-1">Account linked with LinkedIn</p>
+        <h1 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight">Profile</h1>
+        <p className="text-sm sm:text-base text-muted-foreground mt-2">Account linked with LinkedIn</p>
       </div>
       <Card>
         <CardHeader>

@@ -74,50 +74,50 @@ export function Sidebar() {
 
       <aside
         className={cn(
-          'w-56 border-r border-border bg-white flex flex-col min-h-screen',
+          'w-64 border-r border-border bg-white flex flex-col min-h-screen',
           'lg:relative lg:translate-x-0',
           'fixed inset-y-0 left-0 z-50 transition-transform duration-300',
           isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
         )}
       >
-        <div className="p-4 border-b border-border flex items-center justify-between">
-          <Link href="/dashboard" className="flex items-center gap-2 font-semibold text-lg text-foreground">
-            <Image src="/seed.png" alt="Leadseed" width={28} height={28} className="rounded" />
+        <div className="p-5 border-b border-border flex items-center justify-between">
+          <Link href="/dashboard" className="flex items-center gap-2.5 font-bold text-xl text-foreground">
+            <Image src="/seed.png" alt="Leadseed" width={32} height={32} className="rounded-lg" />
             Leadseed
           </Link>
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="lg:hidden p-1 rounded-md hover:bg-accent transition-colors"
+            className="lg:hidden p-1.5 rounded-lg hover:bg-accent transition-colors"
             aria-label="Close menu"
           >
             <X className="h-5 w-5" />
           </button>
         </div>
-        <nav className="flex-1 p-2 space-y-0.5">
+        <nav className="flex-1 p-3 space-y-1">
           {nav.map(({ href, label, icon: Icon }) => (
             <Link
               key={href}
               href={href}
               className={cn(
-                'flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
+                'flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm font-medium transition-all duration-200',
                 pathname === href
-                  ? 'bg-primary text-primary-foreground'
+                  ? 'bg-primary text-primary-foreground shadow-sm'
                   : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground'
               )}
             >
-              <Icon className="h-4 w-4" />
+              <Icon className="h-5 w-5" />
               {label}
             </Link>
           ))}
         </nav>
-        <div className="p-2 border-t border-border">
+        <div className="p-3 border-t border-border">
           <button
             type="button"
             onClick={handleLogout}
-            className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+            className="flex w-full items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-200"
           >
-            <LogOut className="h-4 w-4" />
+            <LogOut className="h-5 w-5" />
             Logout
           </button>
         </div>

@@ -65,7 +65,12 @@ export default function TeamPage() {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-xl sm:text-2xl font-semibold text-foreground">Team</h1>
+      <div>
+        <h1 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight">Team</h1>
+        <p className="text-sm sm:text-base text-muted-foreground mt-2">
+          Collaborate with your team and share leads
+        </p>
+      </div>
 
       {!hasTeam && (
         <TeamEmptyState

@@ -60,15 +60,17 @@ export default function CampaignsPage() {
 
   return (
     <div className="space-y-6">
-      {/* Top Section */}
       <div>
-        <h1 className="text-xl sm:text-2xl font-semibold text-foreground">
-          Campaign List
+        <h1 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight">
+          Campaigns
         </h1>
+        <p className="text-sm sm:text-base text-muted-foreground mt-2">
+          Manage your LinkedIn outreach campaigns and message templates
+        </p>
         <CampaignTabs
           activeTab={activeTab}
           onTabChange={setActiveTab}
-          className="mt-4"
+          className="mt-6"
         />
       </div>
 

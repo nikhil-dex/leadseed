@@ -23,10 +23,10 @@ export function ProspectsHeader({
 
   return (
     <header className={cn('flex flex-col gap-4', className)}>
-      <div className="flex flex-col gap-1">
-        <h1 className="text-2xl font-semibold text-foreground">Prospects</h1>
-        <p className="text-sm font-medium text-foreground">{selectedListName}</p>
-        <p className="text-sm text-muted-foreground">{description}</p>
+      <div className="flex flex-col gap-2">
+        <h1 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight">Prospects</h1>
+        <p className="text-base font-semibold text-foreground">{selectedListName}</p>
+        <p className="text-sm sm:text-base text-muted-foreground">{description}</p>
       </div>
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div className="flex items-center gap-2">
