@@ -1,0 +1,19 @@
+{
+  "name": "leadseed",
+  "private": true,
+  "workspaces": [
+    "dashboard",
+    "server"
+  ],
+  "scripts": {
+    "dev:server": "npm run dev -w server",
+    "dev:dashboard": "npm run dev -w dashboard",
+    "build:dashboard": "npm run build -w dashboard",
+    "build:server": "npm run build -w server",
+    "start:server": "npm run start -w server",
+    "start:dashboard": "npm run start -w dashboard"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

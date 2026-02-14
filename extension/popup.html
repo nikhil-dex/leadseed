@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Leadseed</title>
+  <style>
+    body {
+      width: 280px;
+      padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 14px;
+    }
+    h1 { font-size: 16px; margin: 0 0 12px; }
+    p { color: #666; margin: 0 0 12px; }
+    input { width: 100%; padding: 8px; margin-bottom: 12px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 6px; }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #0A66C2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:hover { background: #004182; }
+    .status { font-size: 12px; margin-top: 8px; color: #0a0; }
+    .error { color: #c00; }
+  </style>
+</head>
+<body>
+  <img src="ext.png" alt="Leadseed" width="40" height="40" style="display: block; margin: 0 auto 12px; border-radius: 6px;" />
+  <h1 style="text-align: center;">Leadseed</h1>
+  <p>Paste your JWT from the dashboard to connect this extension.</p>
+  <input type="password" id="token" placeholder="Paste token (Bearer not needed)" />
+  <button id="save">Save token</button>
+  <p id="status" class="status"></p>
+  <script src="popup.js"></script>
+</body>
+</html>

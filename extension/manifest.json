@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Leadseed",
+  "version": "1.0.0",
+  "description": "User-triggered lead extraction from LinkedIn profiles",
+  "icons": {
+    "16": "ext.png",
+    "48": "ext.png",
+    "128": "ext.png"
+  },
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["https://www.linkedin.com/*", "http://localhost:4000/*"],
+  "background": {"service_worker": "background.js"},
+  "content_scripts": [{"matches": ["https://www.linkedin.com/in/*"], "js": ["content.js"], "run_at": "document_idle"}],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "ext.png"
+  }
+}
