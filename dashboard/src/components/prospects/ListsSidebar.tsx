@@ -37,16 +37,16 @@ export function ListsSidebar({
   return (
     <aside
       className={cn(
-        'flex w-full flex-col border-r border-border bg-white md:w-[280px] md:shrink-0',
+        'flex w-full flex-col border-r border-border bg-white lg:w-[280px] lg:shrink-0 h-full',
         className
       )}
     >
       <div className="flex flex-col gap-4 p-4">
         <div className="flex items-center justify-between gap-2">
-          <h2 className="text-lg font-semibold text-foreground">Lists</h2>
+          <h2 className="text-base sm:text-lg font-semibold text-foreground">Lists</h2>
           <Button
             onClick={onAddList}
-            className="shrink-0 px-3 py-1.5 text-xs"
+            className="shrink-0 px-2 sm:px-3 py-1.5 text-xs"
           >
             Add List
           </Button>

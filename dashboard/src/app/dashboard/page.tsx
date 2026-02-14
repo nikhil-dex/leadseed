@@ -87,17 +87,17 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 sm:space-y-8">
       {/* Home Section */}
       <SectionHeader title="Home" subtitle="Last 90 days" />
       <div>
-        <h1 className="text-2xl font-semibold text-foreground">
+        <h1 className="text-xl sm:text-2xl font-semibold text-foreground">
           Hello {stats.profileName} 👋
         </h1>
       </div>
 
       {/* Row 1 — LinkedIn Metrics Cards */}
-      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
+      <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         <MetricCard
           label="Followers"
           value={stats.followers}
@@ -121,36 +121,36 @@ export default function DashboardPage() {
       </div>
 
       {/* Prospecting Status Section */}
-      <div className="grid gap-6 lg:grid-cols-2">
-        <div className="space-y-6">
+      <div className="grid gap-6 lg:gap-6 lg:grid-cols-2">
+        <div className="space-y-4 sm:space-y-6">
           <SectionHeader
             title="Prospecting Status"
             subtitle="Campaign and queue overview"
           />
-          <div className="rounded-2xl border border-border bg-white p-6 shadow-sm">
+          <div className="rounded-2xl border border-border bg-white p-4 sm:p-6 shadow-sm">
             <div className="flex flex-wrap items-center gap-4">
               <StatusBadge status="inactive">Inactive</StatusBadge>
             </div>
-            <dl className="mt-6 grid gap-4 sm:grid-cols-2">
+            <dl className="mt-4 sm:mt-6 grid gap-4 grid-cols-2">
               <div>
-                <dt className="text-sm font-medium text-muted-foreground">
+                <dt className="text-xs sm:text-sm font-medium text-muted-foreground">
                   Active Campaigns
                 </dt>
-                <dd className="mt-1 text-2xl font-semibold tabular-nums text-foreground">
+                <dd className="mt-1 text-xl sm:text-2xl font-semibold tabular-nums text-foreground">
                   {stats.activeCampaigns}
                 </dd>
               </div>
               <div>
-                <dt className="text-sm font-medium text-muted-foreground">
+                <dt className="text-xs sm:text-sm font-medium text-muted-foreground">
                   Queued Actions
                 </dt>
-                <dd className="mt-1 text-2xl font-semibold tabular-nums text-foreground">
+                <dd className="mt-1 text-xl sm:text-2xl font-semibold tabular-nums text-foreground">
                   {stats.queuedActions}
                 </dd>
               </div>
             </dl>
             <Button
-              className="mt-6 w-full sm:w-auto"
+              className="mt-4 sm:mt-6 w-full sm:w-auto"
               disabled
             >
               Create Campaign
@@ -158,13 +158,13 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        <div className="lg:pt-11">
+        <div className="space-y-4 sm:space-y-6 lg:pt-11">
           <SectionHeader title="Profile Summary" />
-          <div className="rounded-2xl border border-border bg-white p-6 shadow-sm">
-            <p className="text-lg font-semibold text-foreground">
+          <div className="rounded-2xl border border-border bg-white p-4 sm:p-6 shadow-sm">
+            <p className="text-base sm:text-lg font-semibold text-foreground">
               {stats.profileName}
             </p>
-            <dl className="mt-4 space-y-3">
+            <dl className="mt-3 sm:mt-4 space-y-3">
               <div className="flex justify-between text-sm">
                 <dt className="text-muted-foreground">Connections</dt>
                 <dd className="font-medium tabular-nums">{stats.profileConnections}</dd>
@@ -188,7 +188,7 @@ export default function DashboardPage() {
           title="Campaign Details"
           subtitle="Metrics for selected campaign"
         />
-        <div className="mb-6">
+        <div className="mb-4 sm:mb-6">
           <label htmlFor="campaign-select" className="sr-only">
             Select Campaign
           </label>
@@ -196,7 +196,7 @@ export default function DashboardPage() {
             id="campaign-select"
             disabled
             className={cn(
-              'w-full max-w-xs rounded-xl border border-border bg-white px-4 py-2.5 text-sm text-foreground',
+              'w-full max-w-xs rounded-xl border border-border bg-white px-3 sm:px-4 py-2 sm:py-2.5 text-sm text-foreground',
               'focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
               'disabled:cursor-not-allowed disabled:opacity-60'
             )}
@@ -206,7 +206,7 @@ export default function DashboardPage() {
           </select>
         </div>
 
-        <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
+        <div className="grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-2">
           <ProgressCard
             label="Invitations Sent"
             value={stats.invitationsSent}

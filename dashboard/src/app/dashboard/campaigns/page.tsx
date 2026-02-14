@@ -62,7 +62,7 @@ export default function CampaignsPage() {
     <div className="space-y-6">
       {/* Top Section */}
       <div>
-        <h1 className="text-2xl font-semibold text-foreground">
+        <h1 className="text-xl sm:text-2xl font-semibold text-foreground">
           Campaign List
         </h1>
         <CampaignTabs
@@ -75,7 +75,7 @@ export default function CampaignsPage() {
       {/* Status summary cards */}
       {activeTab === 'campaigns' && (
         <>
-          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             <CampaignStatusCard
               label="Active"
               value={stats.active}
@@ -105,7 +105,7 @@ export default function CampaignsPage() {
               onChange={setSearch}
               placeholder="Search"
             />
-            <Button onClick={handleCreateCampaign} className="sm:shrink-0">
+            <Button onClick={handleCreateCampaign} className="w-full sm:w-auto sm:shrink-0">
               Create Campaign
             </Button>
           </div>

@@ -19,8 +19,8 @@ export default function ProfilePage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-semibold text-foreground">Profile</h1>
-        <p className="text-muted-foreground mt-1">Account linked with LinkedIn</p>
+        <h1 className="text-xl sm:text-2xl font-semibold text-foreground">Profile</h1>
+        <p className="text-sm sm:text-base text-muted-foreground mt-1">Account linked with LinkedIn</p>
       </div>
       <Card>
         <CardHeader>
@@ -35,7 +35,7 @@ export default function ProfilePage() {
             <p className="text-sm text-muted-foreground mb-2">
               Copy your token and paste it in the extension popup to connect.
             </p>
-            <Button onClick={copyToken}>{copied ? 'Copied!' : 'Copy token for extension'}</Button>
+            <Button onClick={copyToken} className="w-full sm:w-auto">{copied ? 'Copied!' : 'Copy token for extension'}</Button>
           </div>
         </CardContent>
       </Card>

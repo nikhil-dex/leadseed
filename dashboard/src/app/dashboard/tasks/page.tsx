@@ -27,8 +27,8 @@ export default function TasksPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-semibold text-foreground">Tasks</h1>
-        <p className="text-muted-foreground mt-1">Recent automation tasks (user-triggered)</p>
+        <h1 className="text-xl sm:text-2xl font-semibold text-foreground">Tasks</h1>
+        <p className="text-sm sm:text-base text-muted-foreground mt-1">Recent automation tasks (user-triggered)</p>
       </div>
       <Card>
         <CardHeader>
@@ -42,7 +42,7 @@ export default function TasksPage() {
               {tasks.map((t) => (
                 <li
                   key={t._id}
-                  className="flex items-center justify-between rounded-lg border border-border px-3 py-2 text-sm"
+                  className="flex items-center justify-between rounded-lg border border-border px-3 py-2 text-xs sm:text-sm"
                 >
                   <span className="font-medium">{t.type}</span>
                   <span className={t.status === 'completed' ? 'text-green-600' : 'text-amber-600'}>
