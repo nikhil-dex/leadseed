@@ -14,7 +14,6 @@ import {
   LogOut,
   Megaphone,
   UsersRound,
-  Menu,
   X,
 } from 'lucide-react';
 
@@ -28,14 +27,20 @@ const nav = [
   { href: '/dashboard/profile', label: 'Profile', icon: User },
 ];
 
-export function Sidebar() {
+interface SidebarProps {
+  isMobileMenuOpen?: boolean;
+  onClose?: () => void;
+}
+
+export function Sidebar({ isMobileMenuOpen = false, onClose }: SidebarProps) {
   const pathname = usePathname();
   const router = useRouter();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, [pathname]);
+    if (onClose) {
+      onClose();
+    }
+  }, [pathname, onClose]);
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -55,19 +60,10 @@ export function Sidebar() {
 
   return (
     <>
-      <button
-        type="button"
-        onClick={() => setIsMobileMenuOpen(true)}
-        className="lg:hidden fixed top-4 left-4 z-40 p-2 rounded-lg bg-white border border-border shadow-sm hover:bg-accent transition-colors"
-        aria-label="Open menu"
-      >
-        <Menu className="h-5 w-5" />
-      </button>
-
       {isMobileMenuOpen && (
         <div
           className="lg:hidden fixed inset-0 bg-black/50 z-40"
-          onClick={() => setIsMobileMenuOpen(false)}
+          onClick={onClose}
           aria-hidden="true"
         />
       )}
@@ -87,7 +83,7 @@ export function Sidebar() {
           </Link>
           <button
             type="button"
-            onClick={() => setIsMobileMenuOpen(false)}
+            onClick={onClose}
             className="lg:hidden p-1.5 rounded-lg hover:bg-accent transition-colors"
             aria-label="Close menu"
           >
